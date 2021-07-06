@@ -1,6 +1,4 @@
 
-//http://www.omdbapi.com/?apikey=91141764&
-
 const popularPage1 = "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=d95f4fac08f4eb5639ca4efc90bd9178";
 
 const popularPage2 = "https://api.themoviedb.org/3/discover/movie?api_key=d95f4fac08f4eb5639ca4efc90bd9178&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=2&with_watch_monetization_types=flatrate";
@@ -158,4 +156,3 @@ const populate = (allPopularPages) => {
 };
 
 addMovies();
-

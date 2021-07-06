@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+a {
+  all: unset;
+}
+
+.header {
+  position: fixed;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1B1F24), to(rgba(27, 31, 36, 0.9)));
+  background: linear-gradient(180deg, #1B1F24 0%, rgba(27, 31, 36, 0.9) 100%);
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.45);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  z-index: 10;
+}
+
+.header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+  width: 90%;
+  color: #FFFFFF;
+  margin: 0 5%;
+}
+
+.header .logo {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0.3em;
+  cursor: pointer;
+}
+
+.header .logo-span {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 25px;
+  line-height: 30px;
+  letter-spacing: 0.5em;
+}
+
+.header .nav-list {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+.header .nav-list li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.search {
+  all: unset;
+  width: 0px;
+  height: 20px;
+  font-size: 12px;
+  background-image: url("/magnifying-glass (2).svg");
+  background-position: 10px 5px;
+  background-size: 22px;
+  background-repeat: no-repeat;
+  padding: 5px 0 5px 40px;
+  background-color: transparent;
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.search:focus {
+  width: 304px;
+  background-color: #111111;
+  border: 1px solid white;
+  background-size: 18px;
+  cursor: text;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+.hero-banner-container {
+  height: 450px;
+  width: 100%;
+}
+
+.hero-banner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  width: 100%;
+}
+
+.body {
+  background-color: #1B1F24;
+}
+
+.carousel-title {
+  padding-left: 28px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.main-container {
+  height: auto;
+  padding-top: 70px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(11, 11, 12, 0)), color-stop(5%, #1B1F24));
+  background: linear-gradient(180deg, rgba(11, 11, 12, 0) 0%, #1B1F24 5%);
+  min-height: 100vh;
+}
+
+.movies-carousel {
+  height: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  overflow: scroll;
+  padding: 0 0 0 20px;
+  margin-bottom: 30px;
+}
+
+.movie-img {
+  width: 180px;
+  height: auto;
+  margin: 6px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.movie-img:hover {
+  -webkit-transform: scale(104%);
+          transform: scale(104%);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/*# sourceMappingURL=main.css.map */
