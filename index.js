@@ -63,16 +63,16 @@ const addMovies = () => {
         const allPopularPages = data[0].results.concat(data[1].results, data[2].results, data[3].results, data[4].results)
 
         
-        if(window.location.pathname == '/movieFlix/index.html') {
+        if(window.location.pathname == '/movieFlix/index.html'  || '/movieFlix/') {
             console.log('on index page');
             populateIndexPage(allPopularPages);
         }
         
-        if(window.location.pathname == '/movieFlix/genre.html') {
+        if(window.location.pathname == '/movieFlix/genre.html' || '/genre.html') {
             genrePagePopulate(data);
         }
 
-        if(window.location.pathname == '/movieFlix/genre-search.html') {
+        if(window.location.pathname == '/movieFlix/genre-search.html'  || '/genre-search.html') {
             genreSearchPopulate(allPopularPages);
         }
 
