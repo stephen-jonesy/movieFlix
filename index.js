@@ -62,6 +62,10 @@ const addMovies = () => {
 
         const allPopularPages = data[0].results.concat(data[1].results, data[2].results, data[3].results, data[4].results)
 
+        if(window.location.pathname == '/movieFlix/' ) {
+            console.log('on index page');
+            populateIndexPage(allPopularPages);
+        }
         
         if(window.location.pathname == '/movieFlix/index.html' ) {
             console.log('on index page');
