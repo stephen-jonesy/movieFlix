@@ -12,7 +12,6 @@ const getMovieId = (e) => {
 
 }
 
-
 const search = (event) => {
     event.preventDefault();
     let searchInput = document.querySelector(".search");

@@ -107,8 +107,8 @@ const movieCast = (creditsURL) => {
     const cast = document.querySelector(".crew");
     const directorTitle = document.querySelector(".director");
     const writersTitle = document.querySelector(".writers");
-    const directorsList = document.createElement("h3");
-    const writersList = document.createElement("h3");
+    const directorsList = document.createElement("div");
+    const writersList = document.createElement("div");
 
     console.log(creditsURL.crew );
 
@@ -137,7 +137,7 @@ const movieCast = (creditsURL) => {
 
 
     writers.forEach(writer => {
-        const writersList = document.createElement("h3");
+        const writersList = document.createElement("div");
 
 
         writersList.innerText = `${writer.name}`;
@@ -146,17 +146,11 @@ const movieCast = (creditsURL) => {
         
     });
 
-
-
 }
-
 
 const populateSearchMovies = (data) => {
     movieInfo(data);
 
-
-   
 };
-
 
 getSearchedMovie();

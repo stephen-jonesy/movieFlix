@@ -121,7 +121,7 @@ a {
   width: 100%;
 }
 
-.body {
+body {
   background-color: #1B1F24;
 }
 
@@ -159,6 +159,7 @@ a {
   margin: 6px;
   border-radius: 10px;
   cursor: pointer;
+  max-height: 270.36px;
 }
 
 .movie-img:hover {
@@ -166,5 +167,102 @@ a {
           transform: scale(104%);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+
+.movie-page-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Montserrat";
+  font-weight: 300;
+  padding-left: 100px;
+}
+
+.movie-page-container .movie-img {
+  width: 350px;
+  max-height: unset;
+}
+
+.movie-page-container .movie-img:hover {
+  -webkit-transform: unset;
+          transform: unset;
+}
+
+.movie-page-container .movie-info-container {
+  padding-left: 60px;
+}
+
+.movie-page-container .movie-title {
+  font-size: 40px;
+}
+
+.movie-page-container .movie-overview {
+  font-weight: 100;
+  width: 70%;
+  font-size: 20px;
+}
+
+.movie-page-container .genres {
+  color: #a6aab4;
+}
+
+.movie-page-container .crew p {
+  color: #a6aab4;
+}
+
+.movie-page-container p {
+  margin-bottom: 5px;
+}
+
+.genre-page-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: "Montserrat";
+  font-size: 20px;
+}
+
+.genre-page-container .genre-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 280px;
+  height: 150px;
+  border-radius: 10px;
+  margin: 10px;
+  color: white;
+  cursor: pointer;
+  background-image: -webkit-gradient(linear, right bottom, left top, from(#ffffff57), to(#60609b00));
+  background-image: linear-gradient(to left top, #ffffff57, #60609b00);
+}
+
+.page-container {
+  background-color: #1B1F24;
+}
+
+.page-container .search-movies-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 /*# sourceMappingURL=main.css.map */

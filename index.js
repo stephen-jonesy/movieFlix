@@ -15,6 +15,7 @@ const imageURL = "https://image.tmdb.org/t/p/w500/";
 
 const highResImageURL = "https://image.tmdb.org/t/p/original/";
 
+console.log(window.location.pathname);
 
 const addMovies = () => {
 
@@ -61,8 +62,19 @@ const addMovies = () => {
 
         const allPopularPages = data[0].results.concat(data[1].results, data[2].results, data[3].results, data[4].results)
 
-        populate(allPopularPages)
+        
+        if(window.location.pathname == '/index.html') {
+            console.log('on index page');
+            populateIndexPage(allPopularPages);
+        }
+        
+        if(window.location.pathname == '/genre.html') {
+            genrePagePopulate(data);
+        }
 
+        if(window.location.pathname == '/genre-search.html') {
+            genreSearchPopulate(allPopularPages);
+        }
 
 
     })
@@ -90,7 +102,7 @@ const shuffle = (array) => {
     return array;
 }
 
-const populate = (allPopularPages) => {
+const populateIndexPage = (allPopularPages) => {
     console.log('allpages', allPopularPages[0]);
 
     const populateHeroBanner = () => {
@@ -155,4 +167,101 @@ const populate = (allPopularPages) => {
 
 };
 
+const genrePagePopulate = (data) => {
+    const colourArray = [
+        '#4d7987',
+        '#4d5187',
+        '#874d52',
+        '#2f9445',
+        '#8b2f94',
+        '#2f3194',
+        '#942f48'
+    ]
+    colourArray.sort( () => .5 - Math.random() );
+    let index = 0;
+
+    const pageContainer = document.querySelector('.genre-page-container');
+    data[5].genres.forEach((genre) => {
+        index++;
+        const genreContainer = document.createElement('div');
+        genreContainer.classList.add('genre-container');
+        genreContainer.style.backgroundColor = colourArray[index];
+        if (index == 6) {
+
+            index = -1;
+        }
+        console.log(genre)
+
+        pageContainer.appendChild(genreContainer);
+        genreContainer.innerText = genre.name;
+        genreContainer.setAttribute('id', genre.id);
+
+        
+    });
+
+
+
+    document.addEventListener('click', (e) => {
+        if(e.target.classList == "genre-container") {
+            
+            const genreID = e.target.id;
+            const params = new URLSearchParams({
+                genre: genreID,
+            });
+            console.log(params.toString());
+            let url = location.hostname;
+            url = `genre-search.html?${params}`;
+            location.href = url;
+            
+        }
+    });
+
+
+}
+
+const genreSearchPopulate = (allPopularPages) => {
+
+    const urlQuery = () => {
+        let searchResult = location.search;
+        searchResult = searchResult.slice( 1 );
+        let searchQuery = searchResult.replace("genre=", "");
+
+        return searchQuery;
+
+    }
+    const genreMoviesList = () => {
+        const genreID = parseInt(urlQuery());
+        const genreMovies = allPopularPages.filter(movie => movie.genre_ids.includes(genreID));
+        return genreMovies;
+
+    }
+    console.log(genreMoviesList());
+    const populatePage = () => {
+        console.log(genreMoviesList())
+        const popularMovies = document.querySelector('.movies-container');
+        /*
+        const searchText = document.querySelector('.search-title');
+        searchText.innerText = "Results for the genre: "
+        */
+        genreMoviesList().forEach(movie => {
+            const img = document.createElement('img');
+
+            img.classList.add('movie-img');
+            img.src = imageURL+movie.poster_path;         
+            img.setAttribute("id", movie.id);
+
+            popularMovies.appendChild(img);
+            
+
+        });
+
+
+    };
+    populatePage()
+
+
+}
+
 addMovies();
+
+
